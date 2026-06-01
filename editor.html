@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT课程视频编辑 - 数字人网络课程生成系统</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="editor.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="editor-container">
+        <!-- ====== 左侧边栏（仅模式切换） ====== -->
+        <aside class="editor-left-sidebar">
+            <div class="mode-tabs">
+                <button class="mode-tab active">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M3 9h18" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9 21V9" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>PPT模式</span>
+                </button>
+                <button class="mode-tab">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 19v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>背景音乐</span>
+                </button>
+                <button class="mode-tab">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M5 20C5 17 8 15 12 15C16 15 19 17 19 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>数字人</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ====== 左侧缩略图面板 ====== -->
+        <aside class="editor-left-thumbs">
+            <div class="left-thumbs-header">
+                <a href="index.html" class="back-link" title="返回首页">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <span class="left-thumbs-title">PPT课程视频</span>
+            </div>
+            <div class="slide-list">
+                <!-- 片头插入区域 -->
+                <div class="intro-outro-section" id="introSection">
+                    <div class="intro-outro-placeholder" id="introPlaceholder" data-type="intro">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="add-icon">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>添加片头</span>
+                    </div>
+                    <div class="intro-outro-preview hidden" id="introPreview">
+                        <video class="intro-outro-video" id="introVideo" controls></video>
+                        <div class="intro-outro-label">片头</div>
+                        <button class="delete-intro-outro" id="deleteIntro">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="slide-thumb active" data-slide="1">
+                    <div class="slide-thumb-inner">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20national%20flag%20on%20white%20background%2C%20red%20flag%20with%20yellow%20stars%2C%20educational%20slide%20thumbnail&image_size=landscape_16_9" alt="slide1">
+                        <span class="slide-num">1</span>
+                    </div>
+                </div>
+                <div class="slide-thumb" data-slide="2">
+                    <div class="slide-thumb-inner">
+                        <div class="slide-thumb-placeholder">
+                            <span class="thumb-title">比例的意义</span>
+                        </div>
+                        <span class="slide-num">2</span>
+                    </div>
+                </div>
+                <div class="slide-thumb" data-slide="3">
+                    <div class="slide-thumb-inner">
+                        <div class="slide-thumb-placeholder thumb-text-heavy">
+                            <p>比例的意义和基本性质</p>
+                        </div>
+                        <span class="slide-num">3</span>
+                    </div>
+                </div>
+                <div class="slide-thumb" data-slide="4">
+                    <div class="slide-thumb-inner">
+                        <div class="slide-thumb-placeholder thumb-text-heavy">
+                            <p>计算下面各比的比值</p>
+                            <p>18:9=2  2.4:4.8=1/2</p>
+                        </div>
+                        <span class="slide-num">4</span>
+                    </div>
+                </div>
+                <div class="slide-thumb" data-slide="5">
+                    <div class="slide-thumb-inner">
+                        <div class="slide-thumb-placeholder">
+                            <span class="thumb-title">比例的应用</span>
+                        </div>
+                        <span class="slide-num">5</span>
+                    </div>
+                </div>
+                <div class="slide-thumb" data-slide="6">
+                    <div class="slide-thumb-inner">
+                        <div class="slide-thumb-placeholder thumb-text-heavy">
+                            <p>比例的应用题解析</p>
+                        </div>
+                        <span class="slide-num">6</span>
+                    </div>
+                </div>
+                <div class="slide-thumb" data-slide="7">
+                    <div class="slide-thumb-inner">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Two%20Chinese%20flags%20side%20by%20side%20comparison%2C%20educational%20slide%20thumbnail&image_size=landscape_16_9" alt="slide7">
+                        <span class="slide-num">7</span>
+                    </div>
+                </div>
+                <div class="slide-thumb" data-slide="8">
+                    <div class="slide-thumb-inner">
+                        <div class="slide-thumb-placeholder">
+                            <span class="thumb-title">比例尺</span>
+                        </div>
+                        <span class="slide-num">8</span>
+                    </div>
+                </div>
+                <div class="slide-thumb" data-slide="9">
+                    <div class="slide-thumb-inner">
+                        <div class="slide-thumb-placeholder">
+                            <span class="thumb-title">图形的放大与缩小</span>
+                        </div>
+                        <span class="slide-num">9</span>
+                    </div>
+                </div>
+                <div class="slide-thumb" data-slide="10">
+                    <div class="slide-thumb-inner">
+                        <div class="slide-thumb-placeholder">
+                            <span class="thumb-title">综合练习</span>
+                        </div>
+                        <span class="slide-num">10</span>
+                    </div>
+                </div>
+
+                <!-- 片尾插入区域 -->
+                <div class="intro-outro-section" id="outroSection">
+                    <div class="intro-outro-placeholder" id="outroPlaceholder" data-type="outro">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="add-icon">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>添加片尾</span>
+                    </div>
+                    <div class="intro-outro-preview hidden" id="outroPreview">
+                        <video class="intro-outro-video" id="outroVideo" controls></video>
+                        <div class="intro-outro-label">片尾</div>
+                        <button class="delete-intro-outro" id="deleteOutro">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 片头片尾选择面板 -->
+        <div class="video-select-overlay hidden" id="videoSelectOverlay">
+            <div class="video-select-panel" id="videoSelectPanel">
+                <div class="video-select-header">
+                    <h3 class="video-select-title" id="videoSelectTitle">选择片头</h3>
+                    <button class="video-select-close" id="videoSelectClose">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="video-select-tabs">
+                    <button class="video-select-tab active" data-tab="library">素材库选择</button>
+                    <button class="video-select-tab" data-tab="upload">本地上传</button>
+                </div>
+                <!-- 素材库内容 -->
+                <div class="video-select-content active" id="libraryContent">
+                    <div class="video-library-list">
+                        <div class="video-library-item" data-video="intro1.mp4">
+                            <div class="video-thumb">
+                                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Education%20video%20intro%20thumbnail%2C%20blue%20gradient%20background%2C%20play%20button%20icon&image_size=landscape_16_9" alt="片头1">
+                                <div class="video-play-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-name">教育风格片头1</span>
+                                <span class="video-duration">00:05</span>
+                            </div>
+                        </div>
+                        <div class="video-library-item" data-video="intro2.mp4">
+                            <div class="video-thumb">
+                                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Modern%20tech%20video%20intro%20thumbnail%2C%20purple%20gradient%2C%20geometric%20shapes&image_size=landscape_16_9" alt="片头2">
+                                <div class="video-play-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-name">科技风格片头</span>
+                                <span class="video-duration">00:08</span>
+                            </div>
+                        </div>
+                        <div class="video-library-item" data-video="intro3.mp4">
+                            <div class="video-thumb">
+                                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Simple%20clean%20video%20intro%20thumbnail%2C%20white%20background%2C%20minimalist%20design&image_size=landscape_16_9" alt="片头3">
+                                <div class="video-play-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-name">简约风格片头</span>
+                                <span class="video-duration">00:03</span>
+                            </div>
+                        </div>
+                        <div class="video-library-item" data-video="intro4.mp4">
+                            <div class="video-thumb">
+                                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20traditional%20style%20video%20intro%2C%20ink%20painting%20background%2C%20elegant&image_size=landscape_16_9" alt="片头4">
+                                <div class="video-play-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-name">国风片头</span>
+                                <span class="video-duration">00:06</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 本地上传内容 -->
+                <div class="video-select-content" id="uploadContent">
+                    <div class="video-upload-area">
+                        <div class="video-upload-box" id="uploadBox">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="upload-icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 8l-5-5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="upload-text">点击上传视频文件</span>
+                            <span class="upload-hint">支持 MP4, MOV, AVI 格式</span>
+                        </div>
+                        <input type="file" id="localFileInput" accept="video/*" class="hidden-file-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== 中间主区域 ====== -->
+        <main class="editor-center">
+            <!-- 顶部标题栏 -->
+            <div class="center-header">
+                <div class="center-header-right">
+                    <button class="header-btn">操作指引</button>
+                    <button class="header-btn">预览</button>
+                    <button class="header-btn">存草稿</button>
+                    <button class="header-btn btn-primary">生成视频</button>
+                </div>
+            </div>
+
+            <!-- 幻灯片预览 -->
+            <div class="preview-area">
+                <div class="preview-canvas">
+                    <div class="ppt-slide">
+                        <!-- 顶部横幅 -->
+                        <div class="slide-top-bar">
+                            <div class="lightbulb-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 21H15M12 3C8.68629 3 6 5.68629 6 9C6 11 7 12 8 13H16C17 12 18 11 18 9C18 5.68629 15.3137 3 12 3Z" stroke="#ffde00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <span class="bar-label">情景导入</span>
+                            <span class="bar-question">刚才看到的这些国旗，你感觉什么相同，什么不同呢？</span>
+                        </div>
+                        <!-- 左侧竖排文字 -->
+                        <div class="vertical-text">
+                            <span>大</span>
+                            <span>小</span>
+                            <span>不</span>
+                            <span>同</span>
+                            <span class="spacer"></span>
+                            <span>形</span>
+                            <span>状</span>
+                            <span>相</span>
+                            <span>同</span>
+                        </div>
+                        <!-- 主内容区 - 大国旗 -->
+                        <div class="slide-main-content">
+                            <div class="flag-large">
+                                <div class="star-big-main"></div>
+                                <div class="star-sm-main" style="top:8%;left:55%"></div>
+                                <div class="star-sm-main" style="top:18%;left:62%"></div>
+                                <div class="star-sm-main" style="top:32%;left:60%"></div>
+                                <div class="star-sm-main" style="top:26%;left:50%"></div>
+                            </div>
+                        </div>
+                        <!-- 左侧水墨装饰 -->
+                        <div class="deco-ink-left">
+                            <svg viewBox="0 0 200 600" preserveAspectRatio="xMidYMid slice">
+                                <defs>
+                                    <linearGradient id="inkGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#8b9dc3;stop-opacity:0.6"/>
+                                        <stop offset="100%" style="stop-color:#dfe3ee;stop-opacity:0.2"/>
+                                    </linearGradient>
+                                </defs>
+                                <ellipse cx="80" cy="200" rx="60" ry="120" fill="url(#inkGrad1)"/>
+                                <ellipse cx="120" cy="350" rx="50" ry="80" fill="url(#inkGrad1)" opacity="0.5"/>
+                                <ellipse cx="60" cy="480" rx="40" ry="60" fill="url(#inkGrad1)" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <!-- 右侧水墨装饰 -->
+                        <div class="deco-ink-right">
+                            <svg viewBox="0 0 200 600" preserveAspectRatio="xMidYMid slice">
+                                <defs>
+                                    <linearGradient id="inkGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#8b9dc3;stop-opacity:0.6"/>
+                                        <stop offset="100%" style="stop-color:#dfe3ee;stop-opacity:0.2"/>
+                                    </linearGradient>
+                                </defs>
+                                <ellipse cx="120" cy="180" rx="55" ry="100" fill="url(#inkGrad2)"/>
+                                <ellipse cx="80" cy="380" rx="45" ry="70" fill="url(#inkGrad2)" opacity="0.5"/>
+                                <ellipse cx="140" cy="500" rx="35" ry="50" fill="url(#inkGrad2)" opacity="0.3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部工具栏 -->
+            <div class="bottom-bar">
+                <div class="bottom-row">
+                    <span class="bottom-label">选择应用:</span>
+                    <button class="apply-btn active">默认状态</button>
+                    <button class="apply-btn">全局应用</button>
+                    <button class="apply-btn">分页应用</button>
+                    <span class="bottom-sep"></span>
+                    <span class="bottom-label">人物出镜:</span>
+                    <div class="page-dropdown">
+                        <select>
+                            <option>1,2,3,4,5,6,7,8,9,10...</option>
+                            <option>全部</option>
+                            <option>1-5</option>
+                            <option>6-10</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- 胶片条 -->
+                <div class="filmstrip">
+                    <div class="film-frame active" data-slide="1">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20national%20flag%20mini%20thumbnail%2C%20red%20flag%20with%20yellow%20stars&image_size=landscape_16_9" alt="">
+                    </div>
+                    <div class="film-frame" data-slide="2">
+                        <div class="film-placeholder">比例的意义</div>
+                    </div>
+                    <div class="film-frame" data-slide="3">
+                        <div class="film-placeholder">比例性质</div>
+                    </div>
+                    <div class="film-frame" data-slide="4">
+                        <div class="film-placeholder">比值计算</div>
+                    </div>
+                    <div class="film-frame" data-slide="5">
+                        <div class="film-placeholder">应用</div>
+                    </div>
+                    <div class="film-frame" data-slide="6">
+                        <div class="film-placeholder">应用题</div>
+                    </div>
+                    <div class="film-frame" data-slide="7">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Two%20flags%20comparison%20mini%20thumbnail&image_size=landscape_16_9" alt="">
+                    </div>
+                    <div class="film-frame" data-slide="8">
+                        <div class="film-placeholder">比例尺</div>
+                    </div>
+                    <div class="film-frame" data-slide="9">
+                        <div class="film-placeholder">放大缩小</div>
+                    </div>
+                    <div class="film-frame" data-slide="10">
+                        <div class="film-placeholder">练习</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ====== 右侧面板 ====== -->
+        <aside class="editor-right">
+            <!-- 播报内容 -->
+            <div class="right-section">
+                <div class="right-section-title">播报内容</div>
+                <div class="text-actions">
+                    <button class="text-action-btn">导入文本</button>
+                    <button class="text-action-btn">插入停顿</button>
+                </div>
+                <div class="script-input">
+                    <textarea placeholder="请输入要播报的文本内容"></textarea>
+                </div>
+            </div>
+
+            <!-- 配音选择 -->
+            <div class="right-section">
+                <div class="setting-row">
+                    <span class="setting-label">文案配音:</span>
+                    <select class="setting-select">
+                        <option>请选择</option>
+                        <option>默认女声</option>
+                        <option>默认男声</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 播报语速 -->
+            <div class="right-section">
+                <div class="setting-row">
+                    <span class="setting-label">播报语速:</span>
+                    <div class="slider-wrap">
+                        <input type="range" class="range-slider" min="0.5" max="2" step="0.1" value="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 播音量 -->
+            <div class="right-section">
+                <div class="setting-row">
+                    <span class="setting-label">播音量:</span>
+                    <div class="slider-wrap">
+                        <input type="range" class="range-slider" min="0" max="100" step="1" value="80">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 配乐音量 -->
+            <div class="right-section">
+                <div class="setting-row">
+                    <span class="setting-label">配乐音量:</span>
+                    <div class="slider-wrap">
+                        <input type="range" class="range-slider" min="0" max="100" step="1" value="30">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 保存并生成音频 -->
+            <div class="right-footer">
+                <button class="btn-save-audio">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                    </svg>
+                    保存并生成音频
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <script src="editor.js"></script>
+</body>
+</html>

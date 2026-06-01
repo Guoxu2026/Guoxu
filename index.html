@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字人网络课程生成系统 - 东孚科技</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部导航栏 -->
+        <header class="top-header">
+            <div class="header-left">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="30" font-family="Noto Sans SC, sans-serif" font-size="24" font-weight="700" fill="#333">东孚科技</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="company-name">东孚科技</span>
+                        <span class="product-name">数字人网络课程生成系统</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-wrapper">
+            <!-- 左侧导航栏 -->
+            <aside class="sidebar">
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-item active">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span>首页</span>
+                    </a>
+                    <a href="works.html" class="nav-item">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21H4C3.46957 21 2.96086 20.7893 2.58579 20.4142C2.21071 20.0391 2 19.5304 2 19V5C2 4.46957 2.21071 3.96086 2.58579 3.58579C2.96086 3.21071 3.46957 3 4 3H9L11 6H20C20.5304 6 21.0391 6.21071 21.4142 6.58579C21.7893 6.96086 22 7.46957 22 8V19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span>作品管理</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="5" stroke="currentColor" stroke-width="2"/>
+                                <path d="M3 21C3 17.134 7.02944 14 12 14C16.9706 14 21 17.134 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M16 4L18 2L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span>数字人</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 18V2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M5 8L12 2L19 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5 22V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M19 22V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 22V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span>声音</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6H4C2.89543 6 2 6.89543 2 8V16C2 17.1046 2.89543 18 4 18H20C21.1046 18 22 17.1046 22 16V8C22 6.89543 21.1046 6 20 6Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M2 12H22" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 6V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M10 6V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M14 6V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span>素材库</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M4 20C4 17.7909 6.68629 16 10 16H14C17.3137 16 20 17.7909 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span>个人中心</span>
+                    </a>
+                </nav>
+                <!-- 快速入门教程 -->
+                <div class="quick-start-sidebar">
+                    <div class="quick-start-card">
+                        <div class="quick-start-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span>快速入门教程</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 主内容区域 -->
+            <main class="main-content">
+                <!-- 欢迎区域 -->
+                <section class="welcome-section">
+                    <h1 class="welcome-title">欢迎回来，<span class="user-highlight">admin</span>!</h1>
+                </section>
+
+                <!-- 功能卡片区域 -->
+                <section class="features-section">
+                    <div class="features-grid">
+                        <!-- 数字人克隆 -->
+                        <div class="feature-card feature-card-purple">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M4 20C4 17.7909 6.68629 16 10 16H14C17.3137 16 20 17.7909 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <span class="feature-name">数字人克隆</span>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">形象一键生成</h3>
+                                <p class="feature-hint">上传30S视频，创建数字人分身</p>
+                            </div>
+                            <div class="feature-illustration">
+                                <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="60" cy="35" r="20" fill="url(#grad1)" opacity="0.8"/>
+                                    <path d="M40 80C40 65 48 55 60 55C72 55 80 65 80 80" stroke="#b37feb" stroke-width="3" fill="none"/>
+                                    <circle cx="60" cy="35" r="15" fill="#fff" opacity="0.9"/>
+                                    <circle cx="55" cy="32" r="2" fill="#722ed1"/>
+                                    <circle cx="65" cy="32" r="2" fill="#722ed1"/>
+                                    <path d="M55 42Q60 46 65 42" stroke="#722ed1" stroke-width="1.5" fill="none"/>
+                                    <defs>
+                                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#b37feb;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#722ed1;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- 声音克隆 -->
+                        <div class="feature-card feature-card-blue">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 19v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="feature-name">声音克隆</span>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">声音自动合成</h3>
+                                <p class="feature-hint">上传30S语音，极速克隆声音</p>
+                            </div>
+                            <div class="feature-illustration">
+                                <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="45" y="20" width="30" height="40" rx="15" fill="url(#grad2)" opacity="0.8"/>
+                                    <path d="M35 45Q35 25 50 25" stroke="#1890ff" stroke-width="2" fill="none"/>
+                                    <path d="M85 45Q85 25 70 25" stroke="#1890ff" stroke-width="2" fill="none"/>
+                                    <path d="M30 45Q30 20 50 20" stroke="#1890ff" stroke-width="2" fill="none" opacity="0.6"/>
+                                    <path d="M90 45Q90 20 70 20" stroke="#1890ff" stroke-width="2" fill="none" opacity="0.6"/>
+                                    <circle cx="60" cy="75" r="8" fill="#1890ff" opacity="0.3"/>
+                                    <defs>
+                                        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#69c0ff;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#1890ff;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- PPT模式 -->
+                        <div class="feature-card feature-card-light-blue" id="pptCard">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M3 9h18" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M9 21V9" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <span class="feature-name">PPT模式</span>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">海量模板</h3>
+                                <p class="feature-hint">从PPT课件到视频课程，数字人开启知识传递新方式</p>
+                            </div>
+                            <div class="feature-illustration">
+                                <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="25" y="25" width="70" height="50" rx="4" fill="url(#grad3)" opacity="0.9"/>
+                                    <rect x="30" y="35" width="60" height="6" rx="2" fill="#fff" opacity="0.8"/>
+                                    <rect x="30" y="45" width="40" height="4" rx="1" fill="#fff" opacity="0.6"/>
+                                    <rect x="30" y="52" width="50" height="4" rx="1" fill="#fff" opacity="0.6"/>
+                                    <rect x="30" y="59" width="35" height="4" rx="1" fill="#fff" opacity="0.6"/>
+                                    <circle cx="95" cy="70" r="12" fill="#13c2c2" opacity="0.8"/>
+                                    <path d="M90 70L94 74L102 66" stroke="#fff" stroke-width="2" fill="none"/>
+                                    <defs>
+                                        <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#5cdbd3;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#13c2c2;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- 文本模式 -->
+                        <div class="feature-card feature-card-blue-dark">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <span class="feature-name">文本模式</span>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">AI文字</h3>
+                                <p class="feature-hint">文本创作，数字人出镜，短视频制作如此简单</p>
+                            </div>
+                            <div class="feature-illustration">
+                                <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="20" y="30" width="50" height="60" rx="4" fill="url(#grad4)" opacity="0.9"/>
+                                    <rect x="25" y="40" width="40" height="4" rx="1" fill="#fff" opacity="0.8"/>
+                                    <rect x="25" y="48" width="30" height="3" rx="1" fill="#fff" opacity="0.6"/>
+                                    <rect x="25" y="54" width="35" height="3" rx="1" fill="#fff" opacity="0.6"/>
+                                    <rect x="25" y="60" width="25" height="3" rx="1" fill="#fff" opacity="0.6"/>
+                                    <circle cx="85" cy="40" r="15" fill="#2f54eb" opacity="0.8"/>
+                                    <text x="85" y="45" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">AI</text>
+                                    <defs>
+                                        <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#85a5ff;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#2f54eb;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 我的作品区域 -->
+                <section class="works-section">
+                    <div class="section-header">
+                        <h2 class="section-title">我的作品</h2>
+                        <a href="works.html" class="section-more">查看更多</a>
+                    </div>
+                    <div class="works-grid">
+                        <div class="work-card">
+                            <div class="work-thumbnail">
+                                <div class="thumbnail-placeholder math-bg">
+                                    <div class="placeholder-content">
+                                        <span class="math-symbol">∑</span>
+                                        <span class="math-text">复习旧知</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="work-info">
+                                <span class="work-title">1</span>
+                                <span class="work-date">2026-05-06 14:04:21</span>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <div class="work-thumbnail">
+                                <div class="thumbnail-placeholder tech-bg">
+                                    <div class="placeholder-content">
+                                        <svg viewBox="0 0 48 48" fill="none" class="placeholder-icon">
+                                            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M24 12V24L32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                        <span class="placeholder-text">测试</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="work-info">
+                                <span class="work-title">测试</span>
+                                <span class="work-date">2025-10-23 10:06:15</span>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <div class="work-thumbnail">
+                                <div class="thumbnail-placeholder history-bg">
+                                    <div class="placeholder-content">
+                                        <span class="history-icon">古</span>
+                                        <span class="placeholder-text">222</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="work-info">
+                                <span class="work-title">222</span>
+                                <span class="work-date">2025-10-13 06:22:03</span>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <div class="work-thumbnail">
+                                <div class="thumbnail-placeholder video-bg">
+                                    <div class="placeholder-content">
+                                        <svg viewBox="0 0 48 48" fill="none" class="placeholder-icon">
+                                            <rect x="8" y="12" width="32" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 20L28 24L20 28V20Z" fill="currentColor"/>
+                                        </svg>
+                                        <span class="placeholder-text">测试带物品数字人</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="work-info">
+                                <span class="work-title">测试带物品数字人1960比1080</span>
+                                <span class="work-date">2025-07-03 08:22:46</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 课程广场区域 -->
+                <section class="plaza-section">
+                    <div class="section-header">
+                        <h2 class="section-title">课程广场</h2>
+                        <div class="plaza-tabs">
+                            <button class="tab-btn active">最新发布</button>
+                            <button class="tab-btn">最多收藏</button>
+                            <button class="tab-btn">最多播放</button>
+                        </div>
+                        <a href="#" class="section-more">查看更多</a>
+                    </div>
+                    <div class="plaza-grid">
+                        <div class="plaza-card">
+                            <div class="plaza-thumbnail">
+                                <div class="thumbnail-placeholder english-bg">
+                                    <div class="placeholder-content">
+                                        <span class="english-text">English</span>
+                                        <span class="english-sub">Writing</span>
+                                    </div>
+                                </div>
+                                <button class="plaza-favorite-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="plaza-info">
+                                <h4 class="plaza-title">English Writing</h4>
+                            </div>
+                        </div>
+                        <div class="plaza-card">
+                            <div class="plaza-thumbnail">
+                                <div class="thumbnail-placeholder ai-bg">
+                                    <div class="placeholder-content">
+                                        <svg viewBox="0 0 48 48" fill="none" class="placeholder-icon">
+                                            <circle cx="24" cy="24" r="12" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="24" cy="24" r="6" fill="currentColor" opacity="0.5"/>
+                                            <path d="M24 6V12M24 36V42M6 24H12M36 24H42" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                        <span class="placeholder-text">Sovits</span>
+                                    </div>
+                                </div>
+                                <button class="plaza-favorite-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="plaza-info">
+                                <h4 class="plaza-title">Sovits模型训练与优化</h4>
+                            </div>
+                        </div>
+                        <div class="plaza-card">
+                            <div class="plaza-thumbnail">
+                                <div class="thumbnail-placeholder electric-bg">
+                                    <div class="placeholder-content">
+                                        <svg viewBox="0 0 48 48" fill="none" class="placeholder-icon">
+                                            <path d="M24 6L28 20H40L30 28L34 42L24 34L14 42L18 28L8 20H20L24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span class="placeholder-text">配电</span>
+                                    </div>
+                                </div>
+                                <button class="plaza-favorite-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="plaza-info">
+                                <h4 class="plaza-title">低压配电常用工具</h4>
+                            </div>
+                        </div>
+                        <div class="plaza-card">
+                            <div class="plaza-thumbnail">
+                                <div class="thumbnail-placeholder math-bg">
+                                    <div class="placeholder-content">
+                                        <span class="math-symbol">π</span>
+                                        <span class="placeholder-text">数学基础</span>
+                                    </div>
+                                </div>
+                                <button class="plaza-favorite-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="plaza-info">
+                                <h4 class="plaza-title">数学基础课程</h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- PPT创作课程弹窗 -->
+    <div class="modal-overlay" id="pptModal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title">PPT创作课程</h3>
+                <button class="modal-close" id="pptModalClose">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-options">
+                    <!-- 导入PPT -->
+                    <div class="modal-option" id="importPptOption">
+                        <input type="file" id="pptFileInput" accept=".ppt,.pptx" style="display:none">
+                        <div class="option-icon">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 6L24 30" stroke="#1890ff" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M16 22L24 30L32 22" stroke="#1890ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M40 32V38C40 39.1046 39.1046 40 38 40H10C8.89543 40 8 39.1046 8 38V32" stroke="#1890ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 28H40" stroke="#1890ff" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="option-content">
+                            <h4 class="option-title">导入PPT</h4>
+                            <p class="option-desc">点击上传或拖拽文件到此处<br>支持PPT、PPTX格式文件，可上传带备注PPT，备注内容可自动提取为视频讲稿</p>
+                        </div>
+                    </div>
+                    <!-- 选择素材库PPT -->
+                    <div class="modal-option" id="libraryPptOption">
+                        <div class="option-icon">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 10C6 8.89543 6.89543 8 8 8H40C41.1046 8 42 8.89543 42 10V38C42 39.1046 41.1046 40 40 40H8C6.89543 40 6 39.1046 6 38V10Z" stroke="#1890ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 16H42" stroke="#1890ff" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M16 8V4" stroke="#1890ff" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M24 8V4" stroke="#1890ff" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M32 8V4" stroke="#1890ff" stroke-width="3" stroke-linecap="round"/>
+                                <rect x="14" y="22" width="8" height="6" rx="1" fill="#1890ff" opacity="0.3"/>
+                                <rect x="26" y="22" width="8" height="6" rx="1" fill="#1890ff" opacity="0.3"/>
+                                <rect x="14" y="32" width="8" height="6" rx="1" fill="#1890ff" opacity="0.3"/>
+                                <rect x="26" y="32" width="8" height="6" rx="1" fill="#1890ff" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <div class="option-content">
+                            <h4 class="option-title">选择素材库PPT</h4>
+                            <p class="option-desc">从素材库选择</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 自动生成口播稿开关 -->
+                <div class="modal-switch-row">
+                    <span class="switch-label">自动生成口播稿</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoScriptSwitch" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="modal-action-link">没有PPT？点击智能生成</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
