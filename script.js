@@ -1,20 +1,15 @@
-// 导航栏交互
+// 导航栏交互 - 只处理 href="#" 的占位链接
 document.addEventListener('DOMContentLoaded', function() {
     const navItems = document.querySelectorAll('.nav-item');
     
     navItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            // 只对 href="#" 的链接阻止默认行为
-            if (this.getAttribute('href') === '#') {
+        if (item.getAttribute('href') === '#') {
+            item.addEventListener('click', function(e) {
                 e.preventDefault();
-            }
-            
-            // 移除所有活跃状态
-            navItems.forEach(nav => nav.classList.remove('active'));
-            
-            // 添加当前项活跃状态
-            this.classList.add('active');
-        });
+                navItems.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        }
     });
 
     // Tab 切换
