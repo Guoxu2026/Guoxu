@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // 初始化当前活跃标签的提示
+    const activeTab = document.querySelector('.resource-tab.active');
+    if (activeTab) {
+        loadMaterialsByType(activeTab.dataset.type);
+    }
+    
     // 根据类型加载素材
     function loadMaterialsByType(type) {
         // 模拟加载不同类别的素材
@@ -30,16 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // 目前只是演示，实际使用时需要连接后端API
         console.log(`加载 ${type} 类型的素材`);
         
-        // 示例：切换时更新格式提示
+        // 切换时更新格式提示
         const formatHint = document.querySelector('.format-hint span:first-child');
-        if (type === 'intro') {
-            formatHint.textContent = '*支持格式MP4、MOV，大小不超过100M，宽高比为16:9';
-        } else if (type === 'bgm') {
+        if (type === 'bgm') {
             formatHint.textContent = '*支持格式MP3、WAV，大小不超过20M';
         } else if (type === 'ppt') {
             formatHint.textContent = '*支持格式PPT、PPTX，大小不超过50M';
-        } else {
+        } else if (type === 'image') {
             formatHint.textContent = '*支持格式PNG、JPG、JPEG，大小不超过10M，宽高比为16:9';
+        } else {
+            formatHint.textContent = '';
         }
     }
     
